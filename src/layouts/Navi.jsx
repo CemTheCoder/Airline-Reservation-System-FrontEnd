@@ -21,7 +21,7 @@ export default function Navi() {
             
           />
           <Menu.Item
-            name='friends'
+            name='xd'
            
            
           />
