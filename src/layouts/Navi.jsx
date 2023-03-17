@@ -17,7 +17,7 @@ export default function Navi() {
            
           />
           <Menu.Item
-            name='messages'
+            name='xd'
             
           />
           <Menu.Item
