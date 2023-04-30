@@ -8,6 +8,8 @@ import AuthRegister from '../pages/AuthRegister';
 import Trips from '../pages/Trips';
 import TripsOneWay from '../pages/TripsOneWay';
 import TripAdd from '../pages/TripAdd';
+import TripsPanel from '../pages/TripsPanel';
+import DeletePanel from '../pages/DeletePanel';
 export default function Dashboard() {
     return (
         <div>
@@ -64,6 +66,23 @@ export default function Dashboard() {
                                    
                                    <Route exact path="/addtrip">
                                        {<TripAdd/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/trips">
+                                       {<TripsPanel/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/delete">
+                                       {<DeletePanel/>}
                                    </Route>
 
                                </Grid.Column>

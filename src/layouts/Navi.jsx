@@ -23,6 +23,7 @@ function handleSignOut() {
   setAuthenticate(false)
   localStorage.clear()
   history.push("/")
+  history.go(0)
 
 }
   return (

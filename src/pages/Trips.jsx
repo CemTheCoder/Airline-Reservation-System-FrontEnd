@@ -14,7 +14,7 @@ export default function Trips() {
 
   useState(() => {
     axios
-      .get("http://localhost:8081/tripsby?takeOffPoint="+takeoff+"&destination="+destination+"&takeOffTime="+start+"&returnTime="+end+"&type="+2)
+      .get("http://localhost:8081/tripsby?takeOffPoint="+takeoff+"&destination="+destination+"&takeOffTime="+start+"&returnTime="+end+"&type=Gidiş Dönüş")
       .then(res => {
         setTrips(res.data)
         
