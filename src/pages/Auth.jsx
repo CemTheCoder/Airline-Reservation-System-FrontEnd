@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Input, Message, Segment } from 'semantic-ui-react'
 
 export default function Auth() {
   const [email, setEmail] = useState("")
+  const [validateEmail, setValidateEmail] = useState(true)
   const [password, setPassword] = useState("")
 
   const history = useHistory()
@@ -16,7 +17,7 @@ export default function Auth() {
 
   const onpasswordchange = e => setPassword(e.target.value);
 
-  
+
 
   function handleButton() {
     axios
@@ -27,16 +28,21 @@ export default function Auth() {
       .then((response) => {
         localStorage.setItem("tokenKey", response.data.message);
         localStorage.setItem("roleId", response.data.roleId)
-        localStorage.setItem("currentUser",response.data.userId);
+        localStorage.setItem("currentUser", response.data.userId);
         localStorage.setItem("email", email)
         console.log(localStorage)
         history.push("/")
         history.go();
-        
-      }).catch((err) => console.log(err))
 
-      setEmail("")
-      setPassword("")
+      }).catch((err) =>
+        
+        setValidateEmail(false),
+        console.log(validateEmail)
+      )
+
+    setEmail("")
+    setPassword("")
+    setValidateEmail(true)
   }
 
   return (
@@ -51,7 +57,10 @@ export default function Auth() {
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' id='email'
                 name="email" value={email}
-                onChange={onemailchange} required />
+                onChange={onemailchange}  
+              
+                 />
+     
               <Form.Input
                 fluid
                 icon='lock'
@@ -62,6 +71,8 @@ export default function Auth() {
                 name="password" value={password}
                 onChange={onpasswordchange} required
               />
+
+              {validateEmail == false?<Message color='red'>Şifre veya E-posta Yanlış</Message> : "" }
 
               <Button color='black' fluid size='large' type='button' onClick={() => handleButton()}>
                 Giriş Yap

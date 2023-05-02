@@ -5,11 +5,12 @@ import { Route } from "react-router";
 import Auth from '../pages/Auth';
 import Home from '../pages/Home';
 import AuthRegister from '../pages/AuthRegister';
-import Trips from '../pages/Trips';
+import TripsRoundFirst from '../pages/TripsRoundFirst';
 import TripsOneWay from '../pages/TripsOneWay';
-import TripAdd from '../pages/TripAdd';
+import TripAddMain from '../pages/TripAddMain';
 import TripsPanel from '../pages/TripsPanel';
 import DeletePanel from '../pages/DeletePanel';
+import TripsRoundSecond from '../pages/TripsRoundSecond';
 export default function Dashboard() {
     return (
         <div>
@@ -50,7 +51,14 @@ export default function Dashboard() {
                                 <Grid.Column width={16}>
                                    
                                     <Route exact path="/search">
-                                        {<Trips/>}
+                                        {<TripsRoundFirst/>}
+                                    </Route>
+
+                                </Grid.Column>
+                                <Grid.Column width={16}>
+                                   
+                                    <Route exact path="/search/second">
+                                        {<TripsRoundSecond/>}
                                     </Route>
 
                                 </Grid.Column>
@@ -65,7 +73,7 @@ export default function Dashboard() {
                                <Grid.Column width={16}>
                                    
                                    <Route exact path="/addtrip">
-                                       {<TripAdd/>}
+                                       {<TripAddMain/>}
                                    </Route>
 
                                </Grid.Column>

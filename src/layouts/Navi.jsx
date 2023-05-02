@@ -33,7 +33,7 @@ function handleSignOut() {
           <Container>
           <Menu.Item position="left">
           <Image src='https://media.istockphoto.com/id/178488809/photo/wings.jpg?s=612x612&w=0&k=20&c=F2jXGWRvrlI1y7u94hVT4FTyW2phNz2nv3mTvTM1P40=' href="/"   size='tiny'  />
-            <Label color="black" size="massive" icon>IKARUS &nbsp; &nbsp; AIRLINES</Label>
+            <Label color="black" size="massive" icon>IKARUS &nbsp;  AIRLINES</Label>
             
           </Menu.Item>
 

@@ -15,7 +15,7 @@ import {
 export default function Footer() {
   return (
     <div>
-            <Segment inverted vertical style={{ margin: '25em 0em 0em', padding: '5em 0em' }}>
+            <Segment  inverted vertical style={{ margin: '25em 0em 0em', padding: '5em 0em' }}>
       
        
 

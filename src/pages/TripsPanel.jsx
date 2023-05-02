@@ -37,8 +37,6 @@ export default function TripsPanel() {
             <Table.HeaderCell>Kalkış Yeri</Table.HeaderCell>
             <Table.HeaderCell>Varış Yeri</Table.HeaderCell>
             <Table.HeaderCell>Kalkış Zamanı</Table.HeaderCell>
-            <Table.HeaderCell>Dönüş Zamanı</Table.HeaderCell>
-            <Table.HeaderCell>Uçuş Tipi</Table.HeaderCell>
             <Table.HeaderCell>Fiyat</Table.HeaderCell>
            
 
@@ -55,8 +53,6 @@ export default function TripsPanel() {
               <Table.Cell>{trip.takeOffPoint}</Table.Cell>
               <Table.Cell>{trip.destination}</Table.Cell>
               <Table.Cell>{trip.takeOffTime}</Table.Cell>
-              <Table.Cell>{trip.returnTime}</Table.Cell>
-              <Table.Cell>{trip.type}</Table.Cell>
               <Table.Cell>{trip.price}</Table.Cell>
 
 
