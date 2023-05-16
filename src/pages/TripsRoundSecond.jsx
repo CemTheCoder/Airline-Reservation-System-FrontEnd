@@ -44,7 +44,7 @@ export default function TripsRoundSecond() {
          <Statistic.Label>23.00</Statistic.Label>
        </Statistic>
        <Statistic>
-         <Statistic.Value>&nbsp;  <Icon   size='small' name='long arrow alternate right'/> &nbsp;  </Statistic.Value>
+         <Statistic.Value>&nbsp;  <Icon   size='small' name='long arrow alternate right  '/> &nbsp;  </Statistic.Value>
         
        </Statistic>
        <Statistic>

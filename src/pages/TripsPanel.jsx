@@ -52,7 +52,7 @@ export default function TripsPanel() {
 
               <Table.Cell>{trip.takeOffPoint}</Table.Cell>
               <Table.Cell>{trip.destination}</Table.Cell>
-              <Table.Cell>{trip.takeOffTime}</Table.Cell>
+              <Table.Cell>{trip.takeOffTime}</Table.Cell>   
               <Table.Cell>{trip.price}</Table.Cell>
 
 

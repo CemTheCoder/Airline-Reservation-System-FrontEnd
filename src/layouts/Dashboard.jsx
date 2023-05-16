@@ -11,6 +11,16 @@ import TripAddMain from '../pages/TripAddMain';
 import TripsPanel from '../pages/TripsPanel';
 import DeletePanel from '../pages/DeletePanel';
 import TripsRoundSecond from '../pages/TripsRoundSecond';
+
+import SeatPickerMain from '../pages/SeatPickerMain';
+import Sp from '../pages/Sp';
+import TicketPreview from '../pages/TicketPreview';
+
+
+
+
+
+
 export default function Dashboard() {
     return (
         <div>
@@ -94,6 +104,32 @@ export default function Dashboard() {
                                    </Route>
 
                                </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/seat">
+                                       {<Sp/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/seat2">
+                                       {<SeatPickerMain/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/preview">
+                                       {<TicketPreview/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                              
                          
                         </Grid.Row>
                     </Grid>

@@ -60,8 +60,8 @@ export default function TripsOneWay() {
          <Statistic>
            <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick  color='black'  size='medium'>Satın Al</Button></Statistic.Value>
            
-         </Statistic>
-       </Statistic.Group>
+         </Statistic>         
+       </Statistic.Group>        
        </Item>
      ))}       
     </Item.Group>

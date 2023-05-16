@@ -47,7 +47,7 @@ export default function Trips() {
    {trips.map(trip => (
      <Item >
      <Statistic.Group >
-       <Statistic>
+       <Statistic> 
          <Statistic.Value>{trip.takeOffPoint}</Statistic.Value>
          <Statistic.Label>23.00</Statistic.Label>
        </Statistic>
