@@ -22,6 +22,7 @@ export default function RoundTrip() {
     const onChangeTwo = (event, data) => setNewDateTwo(data.value);
     console.log(currentDateTwo)
 
+    const [numOfPassengers, setNumOfPassengers] = useState("")
 
     const history = useHistory()
    
@@ -69,11 +70,25 @@ export default function RoundTrip() {
         localStorage.setItem("destination",destination)
         localStorage.setItem("start",currentDate)
         localStorage.setItem("end",currentDateTwo)
-       
+        localStorage.setItem("numOfPassengers",numOfPassengers)
 
         history.push("/search")
 
       }
+
+      const optionstwo = [
+        { key: 1, text: '1', value: 1 },
+        { key: 2, text: '2', value: 2 },
+        { key: 3, text: '3', value: 3 },
+        { key: 4, text: '4', value: 4 },
+        { key: 5, text: '5', value: 5 },
+      ]
+
+      function onNumOfPassengersChange(e,data) {
+        console.log(data.value);
+        setNumOfPassengers(data.value);
+    }
+
      
   return (
     <div>
@@ -81,10 +96,11 @@ export default function RoundTrip() {
 <Card fluid  >
       <Card.Content>
         
-        <Card.Header>En Ucuz Fiyatlarla Uç!</Card.Header>
+      <Card.Header>Uçmanın En İhtişamlı Yolu</Card.Header>
+                    <br/>
        
         <Card.Description>
-          <div> <Dropdown onChange={(e,data) =>oneTakeOffChange(e,data)} options={options}  placeholder='Nereden'  search selection  /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <Dropdown onChange={(e,data) =>onDestinationChange(e,data)} options={options} placeholder='Nereye'  search selection  />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <SemanticDatepicker inverted onChange={onChange} />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <SemanticDatepicker inverted onChange={onChangeTwo} /> </div>
+          <div> <Dropdown onChange={(e,data) =>oneTakeOffChange(e,data)} options={options}  placeholder='Nereden'  search selection  /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <Dropdown onChange={(e,data) =>onDestinationChange(e,data)} options={options} placeholder='Nereye'  search selection  />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <SemanticDatepicker placeholder={"Kalkış Zamanı"} inverted onChange={onChange} />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <SemanticDatepicker placeholder={"Dönüş Zamanı"} inverted onChange={onChangeTwo} />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br/>  <Dropdown onChange={(e, data) => onNumOfPassengersChange(e, data)} options={optionstwo} placeholder='Yolcu' search selection /> </div>
          
         </Card.Description>
       </Card.Content>

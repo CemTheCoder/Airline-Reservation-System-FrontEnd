@@ -15,7 +15,7 @@ export default function TicketPreview() {
                        
                        
                         <Item.Content >
-                        <Item.Image floated='left'  style={{ zoom: 1 }} avatar src='https://i.hizliresim.com/ruwhtcv.png' />
+                        <Item.Image floated='left'  style={{ zoom: 1.2 }} avatar src='https://i.hizliresim.com/ruwhtcv.png' />
                        
 
                             <Item.Header as='a'>
@@ -46,9 +46,12 @@ export default function TicketPreview() {
                                         </Statistic.Group>
                                     </Item>
 
-
-                                    <Item  >
+<br/>
+                                    
+<Item  >
+                                        
                                         <Statistic.Group size='tiny'  >
+                                            
                                             <Statistic>
                                                 <Statistic.Value>Ankara</Statistic.Value>
                                                 <Statistic.Label>23.00</Statistic.Label>
@@ -69,13 +72,14 @@ export default function TicketPreview() {
                                         </Statistic.Group>
                                     </Item>
 
+                                 
                                     
 
                                 </Item.Group>
 
                             </Item.Header>
                             
-                            <br />  <br /> <br /> 
+                            <br />  <br /> <br />  <br /> 
                             <Item.Description ><Segment floated='left'> <Icon name='user' />Cem Erdem</Segment></Item.Description>
                             <Item.Description ><Segment floated='left'> <Icon name='plane' />IAF123</Segment></Item.Description>
                             <Item.Description  >
@@ -85,7 +89,7 @@ export default function TicketPreview() {
                                 
                                 <Segment floated='left'> <Icon name='suitcase' />15 Kg</Segment>
                                 <Segment floated='left'> <Icon name='sign-in alternate' />B42</Segment>
-                                <Segment floated='left'> <Icon name='user' />A17 B7</Segment>
+                                <Segment floated='left'> <Icon name='user' />{localStorage.getItem("seats")}</Segment>
 
                                 
                               

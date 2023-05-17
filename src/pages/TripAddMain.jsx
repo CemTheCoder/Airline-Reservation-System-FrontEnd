@@ -12,7 +12,6 @@ export default function TripAddOne() {
     const [destination, setDestination] = useState({})
     const [start, setStart] = useState("")
     const [end, setEnd] = useState("")
-    const [numOfPassengers, setNumOfPassengers] = useState("")
 
 
     const [currentDate, setNewDate] = useState(null);
@@ -28,7 +27,6 @@ export default function TripAddOne() {
 
    const onStartChange = e => setStart(e.target.value);
    const onEndChange = e => setEnd(e.target.value);
-   const onNumOfPassengers = e => setNumOfPassengers(e.target.value);
     
 
     useState(() => {
@@ -71,17 +69,14 @@ export default function TripAddOne() {
         setDestination(data.value);
     };
 
-    function onNumOfPassengersChange(e,data) {
-        console.log(data.value);
-        setNumOfPassengers(data.value);
-    }
+    
 
     const onPriceChange = e => setprice(e.target.value);
 
     function handleButton() {
   
         axios
-    .post("http://localhost:8081/trip?takeoff="+takeOff+"&destination="+destination+"&takeOffTime="+currentDate+"&price="+price+"&start="+start+"&end="+end+"&numOfPassengers="+numOfPassengers)
+    .post("http://localhost:8081/trip?takeoff="+takeOff+"&destination="+destination+"&takeOffTime="+currentDate+"&price="+price+"&start="+start+"&end="+end)
     .then((response) => {
      console.log(response)
       history.push("/")
@@ -93,14 +88,6 @@ export default function TripAddOne() {
 
     }
  
-    const optionstwo = [
-        { key: 1, text: '1', value: 1 },
-        { key: 2, text: '2', value: 2 },
-        { key: 3, text: '3', value: 3 },
-        { key: 4, text: '4', value: 4 },
-        { key: 5, text: '5', value: 5 },
-      ]
-
 
   return (
     <div>
@@ -115,8 +102,7 @@ export default function TripAddOne() {
                     <br /><br />
                     <SemanticDatepicker  placeholder={"Kalkış Zamanı"}  inverted onChange={onChange} />
                     <br /><br />
-                    <Dropdown onChange={(e, data) => onNumOfPassengersChange(e, data)} options={optionstwo} placeholder='Yolcu' search selection />
-                    <br /><br />
+                   
                     <Input placeholder='Kalkış Saati' id='start'
                         name="start" value={start}
                         onChange={onStartChange} required />

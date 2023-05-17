@@ -49,7 +49,7 @@ export default function Trips() {
      <Statistic.Group >
        <Statistic> 
          <Statistic.Value>{trip.takeOffPoint}</Statistic.Value>
-         <Statistic.Label>23.00</Statistic.Label>
+         <Statistic.Label>{trip.start}</Statistic.Label>
        </Statistic>
        <Statistic>
          <Statistic.Value>&nbsp;  <Icon   size='small' name='long arrow alternate right'/> &nbsp;  </Statistic.Value>
@@ -57,7 +57,7 @@ export default function Trips() {
        </Statistic>
        <Statistic>
          <Statistic.Value>{trip.destination}</Statistic.Value>
-         <Statistic.Label>22.00</Statistic.Label>
+         <Statistic.Label>{trip.end}</Statistic.Label>
        </Statistic>
        <Statistic>
          <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;{trip.price}  <Icon   size='small' name='lira sign'/> </Statistic.Value>

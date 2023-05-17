@@ -17,58 +17,112 @@ export default function Sp() {
         { id: 2, number: "A2" },
   
         null, 
-        { id: 5, number: "A8" },
-        { id: 6, number: "A9" }
+        { id: 5, number: "A3" },
+        { id: 6, number: "A4" },
+        null, 
+        { id: 5, number: "A5" },
+        { id: 6, number: "A6" }
       ],
       [
         { id: 11, number: "B1" },
         { id: 12, number: "B2" },
   
         null,
-        { id: 15, number: "B9" },
-        { id: 16, number: "B10" }
+        { id: 15, number: "B3" },
+        { id: 16, number: "B4" },
+        null,
+        { id: 15, number: "B5" },
+        { id: 16, number: "B6" }
       ],
       [
         { id: 21, number: "C1" },
         { id: 22, number: "C2" },
   
         null,
-        { id: 25, number: "C9" },
-        { id: 26, number: "C10" },
+        { id: 25, number: "C3" },
+        { id: 26, number: "C4" },
   
-        null
+        null,
+        { id: 25, number: "C5" },
+        { id: 26, number: "C6" },
+  
       ],
       [
         { id: 11, number: "D1" },
         { id: 12, number: "D2" },
   
         null,
-        { id: 15, number: "D9" },
-        { id: 16, number: "D10" }
+        { id: 15, number: "D3" },
+        { id: 16, number: "D4" },
+        null,
+        { id: 15, number: "D5" },
+        { id: 16, number: "D6" }
       ],
       [
         { id: 11, number: "E1" },
         { id: 12, number: "E2" },
   
         null,
-        { id: 15, number: "E9" },
-        { id: 16, number: "E10" }
+        { id: 15, number: "E3" },
+        { id: 16, number: "E4" },
+        null,
+        { id: 15, number: "E5" },
+        { id: 16, number: "E6" }
       ],
       [
         { id: 11, number: "F1" },
         { id: 12, number: "F2" },
   
         null,
-        { id: 15, number: "F9" },
-        { id: 16, number: "F10" }
+        { id: 15, number: "F3" },
+        { id: 16, number: "F4" },
+        null,
+        { id: 15, number: "F5" },
+        { id: 16, number: "F6" }
       ],
       [
         { id: 11, number: "G1" },
         { id: 12, number: "G2" },
   
         null,
-        { id: 15, number: "G9" },
-        { id: 16, number: "G10" }
+        { id: 15, number: "G3" },
+        { id: 16, number: "G4" },
+        null,
+        { id: 15, number: "G5" },
+        { id: 16, number: "G6" }
+      ],
+      [
+        { id: 11, number: "H1" },
+        { id: 12, number: "H2" },
+  
+        null,
+        { id: 15, number: "H3" },
+        { id: 16, number: "H4" },
+        null,
+        { id: 15, number: "H5" },
+        { id: 16, number: "H6" }
+      ],
+      [
+        { id: 11, number: "I1" },
+        { id: 12, number: "I2" },
+  
+        null,
+        { id: 15, number: "I3" },
+        { id: 16, number: "I4" },
+        null,
+        { id: 15, number: "I5" },
+        { id: 16, number: "I6" }
+      ],
+      [
+        { id: 11, number: "J1" },
+        { id: 12, number: "J2" },
+  
+        null,
+        { id: 15, number: "J3" },
+        { id: 16, number: "J4" },
+        null,
+        { id: 15, number: "J5" },
+        { id: 16, number: "J6" }
       ]
     ];
     const price = 30;
@@ -88,7 +142,7 @@ export default function Sp() {
     function handleButton() {
       localStorage.setItem("seats",selected.toString())
       console.log(localStorage)
-      history.push("/payment")
+      history.push("/preview")
     }
   return (
     <div className="seats" style={{zoom: 1.5 }}>
@@ -100,7 +154,7 @@ export default function Sp() {
       removeSeatCallback={removeSeatCallback}
       rows={rows}
       alpha
-      maxReservableSeats={2}
+      maxReservableSeats={localStorage.getItem("numOfPassengers")}
       visible
       color="black"
     />

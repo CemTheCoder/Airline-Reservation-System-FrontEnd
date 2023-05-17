@@ -41,7 +41,7 @@ function handleSignOut() {
           <Menu.Item>
           <Label inverted color="black" size="big" >Hizmetler</Label>  &nbsp; &nbsp;
           <Label inverted color="black" size="big" >Kampanyalar</Label>  &nbsp; &nbsp; 
-          <Label inverted color="black" size="big" >Bilet İşlemleri</Label>  &nbsp; &nbsp;
+          <Label inverted color="black" size="big" >Biletlerim</Label>  &nbsp; &nbsp;
           </Menu.Item>
          
           <Menu.Item position="right">

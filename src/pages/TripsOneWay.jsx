@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { Item , Icon , Label, Segment, Statistic, Button } from 'semantic-ui-react'
 
 
@@ -11,6 +12,7 @@ export default function TripsOneWay() {
     const start = localStorage.getItem("start")
     const end = localStorage.getItem("end")
   
+    const history = useHistory()
   
     useState(() => {
       axios
@@ -27,7 +29,9 @@ export default function TripsOneWay() {
   
     }, [])
   
-  
+    function handleButton() {
+      history.push("/seat")
+    }
   
   
     return (
@@ -43,7 +47,7 @@ export default function TripsOneWay() {
        <Statistic.Group >
          <Statistic>
            <Statistic.Value>{trip.takeOffPoint}</Statistic.Value>
-           <Statistic.Label>23.00</Statistic.Label>
+           <Statistic.Label>{trip.start}</Statistic.Label>
          </Statistic>
          <Statistic>
            <Statistic.Value>&nbsp;  <Icon   size='small' name='long arrow alternate right'/> &nbsp;  </Statistic.Value>
@@ -51,14 +55,14 @@ export default function TripsOneWay() {
          </Statistic>
          <Statistic>
            <Statistic.Value>{trip.destination}</Statistic.Value>
-           <Statistic.Label>22.00</Statistic.Label>
+           <Statistic.Label>{trip.end}</Statistic.Label>
          </Statistic>
          <Statistic>
            <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;{trip.price}  <Icon   size='small' name='lira sign'/> </Statistic.Value>
            <Statistic.Label></Statistic.Label>
          </Statistic>
          <Statistic>
-           <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick  color='black'  size='medium'>Satın Al</Button></Statistic.Value>
+           <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={() => handleButton()}  color='black'  size='medium'>Satın Al</Button></Statistic.Value>
            
          </Statistic>         
        </Statistic.Group>        

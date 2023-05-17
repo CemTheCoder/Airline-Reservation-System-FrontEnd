@@ -23,6 +23,7 @@ export default function Home() {
     
   return (
     <div >
+      <br/><br/>
       <Segment secondary >
        <Tab   panes={panes} />
        </Segment>
