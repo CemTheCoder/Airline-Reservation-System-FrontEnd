@@ -12,7 +12,7 @@ export default function TripAddOne() {
     const [destination, setDestination] = useState({})
     const [start, setStart] = useState("")
     const [end, setEnd] = useState("")
-
+    const [name, setName] = useState("")
 
     const [currentDate, setNewDate] = useState(null);
     const onChange = (event, data) => setNewDate(data.value);
@@ -72,11 +72,12 @@ export default function TripAddOne() {
     
 
     const onPriceChange = e => setprice(e.target.value);
+    const onNameChange = e => setName(e.target.value);
 
     function handleButton() {
   
         axios
-    .post("http://localhost:8081/trip?takeoff="+takeOff+"&destination="+destination+"&takeOffTime="+currentDate+"&price="+price+"&start="+start+"&end="+end)
+    .post("http://localhost:8081/trip?takeoff="+takeOff+"&destination="+destination+"&takeOffTime="+currentDate+"&price="+price+"&start="+start+"&end="+end+"&name="+name)
     .then((response) => {
      console.log(response)
       history.push("/")
@@ -95,6 +96,11 @@ export default function TripAddOne() {
 {localStorage.getItem("roleId") != 1? "You have not permission in this page" :  <Segment >
                 <br /><br />
                 <Form>
+
+                <Input placeholder='Uçuş Kodu' id='name'
+                        name="name" value={name}
+                        onChange={onNameChange} required />
+                    <br /><br />
                    
                     <Dropdown onChange={(e, data) => oneTakeOffChange(e, data)} options={options} placeholder='Nereden' search selection />
                     <br /><br />
@@ -119,6 +125,8 @@ export default function TripAddOne() {
                         name="price" value={price}
                         onChange={onPriceChange} required />
                     <br /><br />
+
+                    
                     <Button color='black' onClick={() => handleButton()} >Uçuş Ekle</Button>
                 </Form>
                 <br /><br />

@@ -29,8 +29,9 @@ export default function TripsRoundSecond() {
     }, [])
   
     
-    function handleButton() {
+    function handleButton(id) {
       history.push("/seat")
+      localStorage.setItem("secondTrip",id)
     }
   
   return (
@@ -62,7 +63,7 @@ export default function TripsRoundSecond() {
          <Statistic.Label></Statistic.Label>
        </Statistic>
        <Statistic>
-         <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={() => handleButton()}  color='black'  size='medium'>Seç</Button></Statistic.Value>
+         <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={() => handleButton(trip.id)}  color='black'  size='medium'>Seç</Button></Statistic.Value>
          
        </Statistic>
      </Statistic.Group>

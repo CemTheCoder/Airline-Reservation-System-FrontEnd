@@ -241,7 +241,7 @@ export default function SeatPickerMain() {
      <SeatPicker rows={rows} maxReservableSeats={100} visible />
     
      
-   </div>
+   </div> 
     
   )
 }

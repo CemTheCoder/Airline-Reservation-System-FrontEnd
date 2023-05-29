@@ -1,38 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import SeatPicker from "react-seat-picker";
-import { Button, Container, Segment , Statistic , Icon , Item} from "semantic-ui-react";
+import { Button, Container, Segment } from "semantic-ui-react";
 import "./Seat.css"
-import axios from "axios";
 
 
-
-
-export default function Sp() {
+export default function OneSp() {
     const [selected, setSelected] = useState([]);
     const [time, setTime] = useState(0);
-    const [first, setFirst] = useState({})
-     
-    const firstId = localStorage.getItem("firstTrip")
-   
     let history = useHistory();
-
-    useState(() => {
-      axios
-        .get("http://localhost:8081/trip?id="+firstId)
-        .then(res => {
-          setFirst(res.data)
-          
-        })
-        .catch(err => {
-          console.log(err)
-        })
-  
-  
-  
-    }, [])
-
-
     const rows = [
       [
         { id: 1, number: "A1" },
@@ -164,35 +140,32 @@ export default function Sp() {
     function handleButton() {
       localStorage.setItem("seats",selected.toString())
       console.log(localStorage)
-      history.push("/seat/second")
+      history.push("/preview")
     }
   return (
     <div className="seats" style={{zoom: 1.5 }}>
     
-   
 
-   <Segment>
-    <SeatPicker
-      addSeatCallback={addSeatCallback}
-      removeSeatCallback={removeSeatCallback}
-      rows={rows}
-      alpha
-      maxReservableSeats={localStorage.getItem("numOfPassengers")}
-      visible
-      color="black"
-    />
-
-<br/>
-        <Button
-         color="black"
-          onClick={() => handleButton()}
-          size="mini"
-        >
-          Koltuk Seç
-        </Button> 
-
-        </Segment>
-  </div>
-
+    <Segment>
+     <SeatPicker
+       addSeatCallback={addSeatCallback}
+       removeSeatCallback={removeSeatCallback}
+       rows={rows}
+       alpha
+       maxReservableSeats={localStorage.getItem("numOfPassengers")}
+       visible
+       color="black"
+     />
+ 
+ <br/>
+         <Button
+          color="black"
+           onClick={() => handleButton()}
+           size="mini"
+         >
+           Koltuk Seç
+         </Button>
+         </Segment>
+   </div>
   )
 }

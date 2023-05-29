@@ -30,8 +30,9 @@ export default function Trips() {
 
   }, [])
 
-  function handleButton() {
+  function handleButton(id) {
     history.push("/search/second")
+    localStorage.setItem("firstTrip",id)
   }
 
 
@@ -64,7 +65,7 @@ export default function Trips() {
          <Statistic.Label></Statistic.Label>
        </Statistic>
        <Statistic>
-         <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={()=>handleButton()}  color='black'  size='medium'>Seç</Button></Statistic.Value>
+         <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={()=>handleButton(trip.id)}  color='black'  size='medium'>Seç</Button></Statistic.Value>
          
        </Statistic>
      </Statistic.Group>

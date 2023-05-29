@@ -29,8 +29,10 @@ export default function TripsOneWay() {
   
     }, [])
   
-    function handleButton() {
-      history.push("/seat")
+    function handleButton(id) {
+      localStorage.setItem("soloTrip" , id)
+      history.push("/seat/solo")
+
     }
   
   
@@ -62,7 +64,7 @@ export default function TripsOneWay() {
            <Statistic.Label></Statistic.Label>
          </Statistic>
          <Statistic>
-           <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={() => handleButton()}  color='black'  size='medium'>Satın Al</Button></Statistic.Value>
+           <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp;<Button onClick={() => handleButton(trip.id)}  color='black'  size='medium'>Satın Al</Button></Statistic.Value>
            
          </Statistic>         
        </Statistic.Group>        

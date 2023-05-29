@@ -9,16 +9,17 @@
   
   .seats {
     
-    height: 100vh;
+    height: 5vh;
     display: flex;
     align-items: center;
    color: blueviolet;
     flex-direction: column;
+    
   }
   
   .seats > h3 {
     color: black;
-    margin-top: 200px;
+    margin-top: 150px;
   }
   
   .seat:hover {

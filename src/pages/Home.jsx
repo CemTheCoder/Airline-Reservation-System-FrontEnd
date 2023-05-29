@@ -20,6 +20,8 @@ export default function Home() {
       { menuItem: 'Gidiş Dönüş', render: () => <Tab.Pane><RoundTrip/></Tab.Pane> }
       
     ]
+
+    
     
   return (
     <div >
