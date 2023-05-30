@@ -14,6 +14,8 @@ export default function OneTicketPreview() {
     
     const history = useHistory()
 
+    let numOfPass = localStorage.getItem("numOfPassengers")
+
     useState(() => {
         axios
           .get("http://localhost:8081/trip?id="+soloId)
@@ -37,6 +39,7 @@ export default function OneTicketPreview() {
      
     
       function handleButton() {
+        localStorage.setItem("soloPrice" , solo.price * numOfPass)
         history.push("/payment")
       }
   return (
@@ -76,7 +79,7 @@ export default function OneTicketPreview() {
                                                 <Statistic.Label>{solo.end}</Statistic.Label>
                                             </Statistic>
                                             <Statistic>
-                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {solo.price}  <Icon size='small' name='lira sign' /> </Statistic.Value>
+                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {solo.price * numOfPass}  <Icon size='small' name='lira sign' /> </Statistic.Value>
                                                 <Statistic.Label></Statistic.Label>
                                             </Statistic>
 
@@ -108,7 +111,7 @@ export default function OneTicketPreview() {
 
 
                             </Item.Description>
-                          <div style={{ zoom: 1.5 }}>Bilet Fiyatı : {solo.price}  <Icon size='small' name='lira sign' /></div> 
+                          <div style={{ zoom: 1.5 }}>Bilet Fiyatı : {solo.price * numOfPass}  <Icon size='small' name='lira sign' /></div> 
                                             
                             <Button color='black' floated='right' onClick={()=>handleButton()}>
                                 Satın Al

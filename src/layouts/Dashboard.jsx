@@ -20,6 +20,8 @@ import PaymentRound from '../pages/PaymentRound';
 import OneTicketPreview from '../pages/OneTicketPreview';
 import SpSecond from '../pages/SpSecond';
 import OneSp from '../pages/OneSp';
+import Success from '../pages/Success';
+import MyTickets from '../pages/MyTickets';
 
 
 
@@ -173,6 +175,22 @@ export default function Dashboard() {
                                    
                                    <Route exact path="/payment/round">
                                        {<PaymentRound/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/success">
+                                       {<Success/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/tickets">
+                                       {<MyTickets/>}
                                    </Route>
 
                                </Grid.Column>

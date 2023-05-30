@@ -83,6 +83,7 @@ export default function OneWay() {
           function onNumOfPassengersChange(e,data) {
             console.log(data.value);
             setNumOfPassengers(data.value);
+            localStorage.setItem("numOfPassengers",numOfPassengers)
         }
     
 

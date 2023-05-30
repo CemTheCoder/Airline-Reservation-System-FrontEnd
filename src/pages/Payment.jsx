@@ -4,6 +4,7 @@ import { Button, Icon, Menu, Table , Input , Form} from 'semantic-ui-react';
 import 'react-credit-cards/es/styles-compiled.css'
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import axios from 'axios';
 
 export default function Payment() {
     const [number, setNumber] = useState('')
@@ -16,6 +17,52 @@ export default function Payment() {
   
     let userId = localStorage.getItem("currentUser")
   
+    let seats = localStorage.getItem("seats")
+
+    let tripId = localStorage.getItem("soloTrip")
+
+    let soloPrice = localStorage.getItem("soloPrice")
+    
+
+    function handleButton() {
+
+      axios
+      .post("http://localhost:8081/credit", {
+        cardNumber : number, 
+        cardName : name,
+        date : expiry,
+        cvc : cvc,
+        userId : userId
+
+      })
+      .then((response) => {
+       
+       console.log(response)
+
+      }).catch((err) => console.log(err))
+
+
+
+
+     
+
+      axios
+      .post("http://localhost:8081/ticket", {
+        seatNumbers: seats,
+        userId: userId,
+        tripId : tripId,
+        price : soloPrice
+
+      })
+      .then((response) => {
+       
+        history.push("/success")
+        history.go();
+
+      }).catch((err) => console.log(err))
+
+
+    }
   
   
     
@@ -70,7 +117,7 @@ export default function Payment() {
         />
         <br/>
         <br/>
-        <Button color='black' type="submit" onClick >Devam Et</Button>
+        <Button color='black' type="submit" onClick={() => handleButton()} >Devam Et</Button>
       </Form>
 
     </div>

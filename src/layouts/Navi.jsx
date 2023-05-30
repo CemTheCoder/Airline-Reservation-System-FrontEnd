@@ -26,6 +26,9 @@ function handleSignOut() {
   history.go(0)
 
 }
+function handleTicketsButton() {
+  history.push("/tickets")
+}
   return (
     <div>
       <Segment inverted>
@@ -41,7 +44,7 @@ function handleSignOut() {
           <Menu.Item>
           <Label inverted color="black" size="big" >Hizmetler</Label>  &nbsp; &nbsp;
           <Label inverted color="black" size="big" >Kampanyalar</Label>  &nbsp; &nbsp; 
-          <Label inverted color="black" size="big" >Biletlerim</Label>  &nbsp; &nbsp;
+          <Label inverted color="black" size="big" onClick={() => handleTicketsButton()} >Biletlerim</Label>  &nbsp; &nbsp;
           </Menu.Item>
          
           <Menu.Item position="right">

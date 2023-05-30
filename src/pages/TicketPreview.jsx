@@ -12,6 +12,8 @@ export default function TicketPreview() {
     
     const history = useHistory()
 
+    let numOfPass = localStorage.getItem("numOfPassengers")
+
     useState(() => {
         axios
           .get("http://localhost:8081/trip?id="+firstId)
@@ -45,9 +47,15 @@ export default function TicketPreview() {
       console.log(first)
       console.log(second)
 
-      const total = first.price + second.price
+      
+
+      const total = (first.price * numOfPass) + (second.price * numOfPass)
     
+      console.log(localStorage)
+
       function handleButton() {
+        localStorage.setItem("firstPrice" , first.price * numOfPass)
+        localStorage.setItem("secondPrice" , second.price * numOfPass)
         history.push("/payment/round")
       }
 
@@ -87,7 +95,7 @@ export default function TicketPreview() {
                                                 <Statistic.Label>{first.end}</Statistic.Label>
                                             </Statistic>
                                             <Statistic>
-                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {first.price}  <Icon size='small' name='lira sign' /> </Statistic.Value>
+                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {first.price * numOfPass}  <Icon size='small' name='lira sign' /> </Statistic.Value>
                                                 <Statistic.Label></Statistic.Label>
                                             </Statistic>
 
@@ -113,7 +121,7 @@ export default function TicketPreview() {
                                                 <Statistic.Label>{second.end}</Statistic.Label>
                                             </Statistic>
                                             <Statistic>
-                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {second.price}  <Icon size='small' name='lira sign' /> </Statistic.Value>
+                                                <Statistic.Value>&nbsp;&nbsp;&nbsp;&nbsp; {second.price * numOfPass}  <Icon size='small' name='lira sign' /> </Statistic.Value>
                                                 <Statistic.Label></Statistic.Label>
                                             </Statistic>
 
