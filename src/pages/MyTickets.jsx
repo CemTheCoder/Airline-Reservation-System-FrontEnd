@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Button, Icon, Image, Item, Label, Segment, Statistic } from 'semantic-ui-react'
+import QRCode from "react-qr-code";
 
 export default function MyTickets() {
 
@@ -76,6 +77,15 @@ export default function MyTickets() {
                   </Item.Group>
 
                 </Item.Header>
+                <br />
+                <Segment basic floated='right'>
+                <QRCode
+    size={256}
+    style={{ zoom: 0.6}}
+    value={"https://www.youtube.com/watch?v=_krgcofiM6M"}
+    viewBox={`0 0 256 256`}
+    />
+                </Segment>
 
                 <br />  <br /> <br />  <br /> <br />
                 <Item.Description ><Segment floated='left'> <Icon name='user' />{ticket.user.name} &nbsp;{ticket.user.surname} </Segment></Item.Description>
@@ -95,7 +105,11 @@ export default function MyTickets() {
 
 
                 </Item.Description>
-                <div style={{ zoom: 1.5 }}>Bilet Fiyatı : {ticket.price}  <Icon size='small' name='lira sign' /></div>
+                <div style={{ zoom: 1.5 }}>Bilet Fiyatı : {ticket.price}  <Icon size='small' name='lira sign' />
+                
+                
+                
+                 </div>
 
 
               </Item.Content>

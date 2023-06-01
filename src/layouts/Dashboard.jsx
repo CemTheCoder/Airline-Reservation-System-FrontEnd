@@ -22,6 +22,9 @@ import SpSecond from '../pages/SpSecond';
 import OneSp from '../pages/OneSp';
 import Success from '../pages/Success';
 import MyTickets from '../pages/MyTickets';
+import CheckIn from '../pages/CheckIn';
+import CheckInSecond from '../pages/CheckInSecond';
+import SuccessSecond from '../pages/SuccessSecond';
 
 
 
@@ -186,6 +189,13 @@ export default function Dashboard() {
                                    </Route>
 
                                </Grid.Column>
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/success/second">
+                                       {<SuccessSecond/>}
+                                   </Route>
+
+                               </Grid.Column>
 
                                <Grid.Column width={16}>
                                    
@@ -195,6 +205,21 @@ export default function Dashboard() {
 
                                </Grid.Column>
 
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/check">
+                                       {<CheckIn/>}
+                                   </Route>
+
+                               </Grid.Column>
+
+                               <Grid.Column width={16}>
+                                   
+                                   <Route exact path="/check/second">
+                                       {<CheckInSecond/>}
+                                   </Route>
+
+                               </Grid.Column>
                               
                          
                         </Grid.Row>

@@ -145,6 +145,39 @@ export default function Sp() {
         null,
         { id: 15, number: "J5" },
         { id: 16, number: "J6" }
+      ],
+      [
+        { id: 11, number: "K1" },
+        { id: 12, number: "K2" },
+  
+        null,
+        { id: 15, number: "K3" },
+        { id: 16, number: "K4" },
+        null,
+        { id: 15, number: "K5" },
+        { id: 16, number: "K6" }
+      ],
+      [
+        { id: 11, number: "L1" },
+        { id: 12, number: "L2" },
+  
+        null,
+        { id: 15, number: "L3" },
+        { id: 16, number: "L4" },
+        null,
+        { id: 15, number: "L5" },
+        { id: 16, number: "L6" }
+      ],
+      [
+        { id: 11, number: "M1" },
+        { id: 12, number: "M2" },
+  
+        null,
+        { id: 15, number: "M3" },
+        { id: 16, number: "M4" },
+        null,
+        { id: 15, number: "M5" },
+        { id: 16, number: "M6" }
       ]
     ];
     const price = 30;
@@ -167,11 +200,13 @@ export default function Sp() {
       history.push("/seat/second")
     }
   return (
-    <div className="seats" style={{zoom: 1.5 }}>
+    <div className="seats" style={{zoom: 1.4 }}>
     
    
 
    <Segment>
+    İlk Bilet İçin Koltuk Seçimi
+    <br/><br/>
     <SeatPicker
       addSeatCallback={addSeatCallback}
       removeSeatCallback={removeSeatCallback}
@@ -192,6 +227,8 @@ export default function Sp() {
         </Button> 
 
         </Segment>
+
+        <br/><br/><br/>
   </div>
 
   )

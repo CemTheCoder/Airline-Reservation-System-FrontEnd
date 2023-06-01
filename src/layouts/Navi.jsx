@@ -29,6 +29,10 @@ function handleSignOut() {
 function handleTicketsButton() {
   history.push("/tickets")
 }
+
+function handleCheckButton() {
+  history.push("/check")
+}
   return (
     <div>
       <Segment inverted>
@@ -42,8 +46,9 @@ function handleTicketsButton() {
 
           
           <Menu.Item>
-          <Label inverted color="black" size="big" >Hizmetler</Label>  &nbsp; &nbsp;
+          
           <Label inverted color="black" size="big" >Kampanyalar</Label>  &nbsp; &nbsp; 
+          <Label inverted color="black" size="big" onClick={() => handleCheckButton()} >Check-in</Label>  &nbsp; &nbsp;
           <Label inverted color="black" size="big" onClick={() => handleTicketsButton()} >Biletlerim</Label>  &nbsp; &nbsp;
           </Menu.Item>
          

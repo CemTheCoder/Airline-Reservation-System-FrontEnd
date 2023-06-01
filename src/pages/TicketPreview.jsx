@@ -54,8 +54,8 @@ export default function TicketPreview() {
       console.log(localStorage)
 
       function handleButton() {
-        localStorage.setItem("firstPrice" , first.price * numOfPass)
-        localStorage.setItem("secondPrice" , second.price * numOfPass)
+        localStorage.setItem("firstPrice" , first.price )
+        localStorage.setItem("secondPrice" , second.price)
         history.push("/payment/round")
       }
 

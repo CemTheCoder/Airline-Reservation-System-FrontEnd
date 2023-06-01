@@ -12,7 +12,7 @@
     height: 5vh;
     display: flex;
     align-items: center;
-   color: blueviolet;
+   color: rgb(0, 0, 0);
     flex-direction: column;
     
   }

@@ -55,7 +55,7 @@ export default function Auth() {
           </Header>
           <Form size='large'>
             <Segment stacked>
-              <Form.Input fluid icon='user' iconPosition='left' placeholder='E-mail address' id='email'
+              <Form.Input fluid icon='user' iconPosition='left' placeholder='E-posta' id='email'
                 name="email" value={email}
                 onChange={onemailchange}  
               
@@ -65,7 +65,7 @@ export default function Auth() {
                 fluid
                 icon='lock'
                 iconPosition='left'
-                placeholder='Password'
+                placeholder='Şifre'
                 type='password'
 
                 name="password" value={password}
